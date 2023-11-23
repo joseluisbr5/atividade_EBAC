@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
+    <style>
+    body{
+        font: normal 18pt arial;
+        text-align: center;
+    } 
+    #result {
+            padding: 8px;
+            margin-top: 20px;
+            align-items: center;    
+            width: 700px;
+            margin-left: 600px;
+        }
+</style>
 </head>
+
+   
 <body>
-    
+    <h1>Formulário de Validação    </h1>
+    <form id="verif" onsubmit="return verificar()">
+        <label for="campoA">Campo A:</label>
+
+    <input type="number" name="campoA" id="campoA"><br>
+        <label for="campoB">Campo B:</label>
+
+    <input type="number" name="campoB" id="campoB"><br>
+
+    <button type="submit">Verificar</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+       function verificar() {
+            
+            var valorA = document.getElementById("campoA").value;
+            var valorB = document.getElementById("campoB").value;
+
+            if (parseInt(valorB) > parseInt(valorA)) {
+                document.getElementById("result").innerHTML = "Formulário válido!";
+                document.getElementById("result").style.backgroundColor = "green";
+                return false; 
+            } else {
+                document.getElementById("result").innerHTML = "Formulário inválido. Certifique-se de que B é maior que A.";
+                document.getElementById("result").style.backgroundColor = "red";
+                return false; 
+            }
+        }
+    </script>
+
 </body>
 </html>
