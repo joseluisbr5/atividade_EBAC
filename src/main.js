@@ -53,4 +53,6 @@ function calculaMediaFinal(){
         somaNotas += notas[i];
     }
 return somaNotas / notas.length;
+
 }
+document.getElementById('nomeContatos').remove()
