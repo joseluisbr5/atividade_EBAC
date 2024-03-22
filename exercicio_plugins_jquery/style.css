@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Darker Grotesque", sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    
+}
+body{
+    background: #FC466B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.container{
+    background-color: rgb(247, 251, 255);
+    max-width: 1024px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 17px;
+   
+    font-weight: bold;
+    font-size: 23px;
+    margin-top: 10%;
+}
+header h1{
+    text-align: center;
+}
+#form_campo{
+    align-items: center;
+}
+#form_campo label{
+    
+    display: block;
+}
+
+#form_campo input, textarea{
+    
+    width: 80%;
+    display: block;
+    padding: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+
+}
+textarea{
+    margin-bottom: 8px;
+}
+form{
+ max-width: 300px;
+ justify-content: center;
+ position: relative;
+ top: 50%;
+ left: 25%;
+ padding: 20px;
+ 
+}
+button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #FC466B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: aliceblue;
+    text-align: center;
+    font-size: 18px;
+    transition: 1s all ease;
+    cursor: pointer;
+}
+button:hover{
+    background: #3F5EFB;
+}
