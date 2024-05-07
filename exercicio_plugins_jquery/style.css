@@ -1,74 +1,145 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Darker Grotesque", sans-serif;
-    font-weight: bold;
-    box-sizing: border-box;
-    
-}
-body{
-    background: #FC466B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-.container{
-    background-color: rgb(247, 251, 255);
-    max-width: 1024px;
-    width: 500px;
-    margin: 0 auto;
-    border-radius: 17px;
-   
-    font-weight: bold;
-    font-size: 23px;
-    margin-top: 10%;
-}
-header h1{
-    text-align: center;
-}
-#form_campo{
-    align-items: center;
-}
-#form_campo label{
-    
-    display: block;
-}
+header{
 
-#form_campo input, textarea{
-    
-    width: 80%;
-    display: block;
-    padding: 8px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    resize: none;
-
-}
-textarea{
-    margin-bottom: 8px;
-}
-form{
- max-width: 300px;
- justify-content: center;
- position: relative;
- top: 50%;
- left: 25%;
- padding: 20px;
- 
-}
-button{
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background: #FC466B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 50px;
+    font-style:italic;
     color: aliceblue;
     text-align: center;
-    font-size: 18px;
-    transition: 1s all ease;
-    cursor: pointer;
+    text-decoration: underline;
+    width: 2000px;
+    padding: 10px;
+    background-color: blueviolet;
 }
-button:hover{
-    background: #3F5EFB;
+
+.carousel-control-next-icon:after
+{
+content: '>';
+font-size: 55px;
+color: rgb(0, 0, 0);
+}
+
+.carousel-control-prev-icon:after {
+content: '<';
+font-size: 55px;
+color: rgb(0, 0, 0);
+}
+#carousel img{
+margin-left: 290px;
+max-width: 700px;
+max-height: 900px;
+align-items: center;
+}
+
+#carouselExempleControls{
+border-bottom: 2px solid #000;
+}
+article img{
+margin-right: 22px;
+height: 250px;
+width: 240px;
+}
+#cards{
+margin-left: 295px;
+margin-bottom: 20px;
+}
+#cards img{
+max-height: 205px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1323px) {
+    body{
+        overflow:scroll;
+
+    }
+    #carousel{
+        margin-bottom: 20px;
+    }
+    header{
+        width: 1000px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #cards{
+        display: flex;
+        margin-left: 90px;
+    }
+    .container h1{
+        margin-bottom: 30px;
+        margin-left: 30px;
+    }
+    .card{
+        margin-bottom: 10px;
+        
+    }
+    #cards img{
+        max-width: 200px;
+        margin-left: 40px;
+        
+    }
+    #carousel img {
+        height: 300px;
+        max-width: 400px;
+        margin-left:250px;
+    }
+    #carouselExempleControls{
+        margin-bottom:70px ;
+    }
+
+}
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    body{
+        overflow:scroll;
+    }
+    #carousel{
+        margin-bottom: 20px;
+    }
+    header{
+        width: 800px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #cards{
+        display: flexbox;
+        margin-left: 75px;
+    }
+    .card{
+        margin-bottom: 10px;
+    }
+    #cards img{
+        max-width: 200px;
+        
+    }
+    #carousel img {
+        height: 300px;
+        max-width: 400px;
+        margin-left:160px;
+    }
+
+}
+@media screen and (max-width:640px){
+    header{
+        width: 430px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #carousel{
+        margin-bottom: 50px;
+    }
+    #cards{
+        display: flex;
+        margin-left: 45px;
+        margin-bottom: 10px;
+
+    }
+
+    #carousel img {
+        height: 200px;
+        max-width: 300px;
+        margin-left:60px;
+    }
+    .card{
+        margin-bottom: 10px;
+    }
+    #carouselExempleControls{
+        margin-bottom:30px ;
+        margin-left: 5px;
+    }
 }

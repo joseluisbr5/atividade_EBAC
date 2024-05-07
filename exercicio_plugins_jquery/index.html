@@ -1,57 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Pagina</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
 </head>
+<style>
+
+</style>
 <body>
+    <header>Eletrodomésticos</header>
     <div class="container">
-        <header>
-            <h1>Cadastro</h1>
-        </header>
-        <form id="form">
-            <div id="form_campo">
-                <label for="nome">Nome completo</label>
-                <input type="text" name="nome" id="">
+        
+        <div id="carouselExempleControls" data-bs-ride="carousel" class="carousel carousel-fade slide">
+            <div id="carousel" class="carousel-inner">
+                <div data-bs-interval="3000" class="carousel-item active">
+                    <img class="d-block w-100" src="./bread-machine-6047_640.jpg" alt="">
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="./electric-iron-6046_640.jpg" alt="">
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="./bread-machine-6048_640.jpg" alt="">
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="./pngwing.com.png" alt="">
+                </div>
             </div>
-            <div id="form_campo">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="">
-            </div>
-            <div id="form_campo">
-                <label for="telefone">Telefone </label>
-                <input type="tel" name="telefone" id="telefone">
-            </div>
-            <div id="form_campo">
-                <label for="number">CPF</label>
-                <input type="text" name="cpf" id="cpf">
-            </div>
-            <div id="form_campo">
-                <label for="cep">CEP</label>
-                <input type="text" name="cep" id="cep">
-            </div>
-            <div id="button">
-                
-            <div id="form_campo">
-               <label for="endereço_completo">Endereço completo</label>
-                <textarea name="endereço_completo" id="" cols="30" rows="4"></textarea>
-            </div>
-            
-                <button type="submit">Cadastrar</button>
-            </div>
-        </form>
+
+            <a class="carousel-control-prev" href="#carouselExempleControls" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"> </span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExempleControls" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"> </span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+        
     </div>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="main.js"></script>
-<script src="./js/jquery.mask.min.js"></script>
-<script src="./js/jquery.validate.min.js"></script>
-<script src="./js/messages_pt_BR.min.js"></script>
+    <div  class="container ">
+        <h1> Produtos</h1>
+        <div id="cards" class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./bread-machine-6047_640.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Torradeira</h5>
+                      <p class="card-text">R$399,00</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./bread-machine-6048_640.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Sanduicheira</h5>
+                      <p class="card-text">R$199,00</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./electric-iron-6046_640.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Ferro de passar </h5>
+                      <p class="card-text">R$299,00</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./pngwing.com.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Liquidificador</h5>
+                      <p class="card-text">R$299,00</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+<script src="./lib/bootstrap.bundle.min.js"></script>
 </body>
 </html>
