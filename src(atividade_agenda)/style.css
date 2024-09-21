@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #E7E7E7;
+   padding: 100px;
+   
+   
+}
+header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 26px;
+    margin-left: 90px ;
+}
+header img{
+    height: 30px;
+    margin-right: 36px;
+}
+header h1{
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    
+    }
+form button{
+    background-color: rgb(50, 50, 82);
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    }
+form input{
+    font-size: 24px;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin-right: 19px;
+    border-radius: 5px;
+    border-bottom: 2px solid black;
+}
+form{
+    justify-content: space-between;
+    display:flex ;
+    max-width: 640px;
+    width: 100%;
+
+}
+ h3#nomeTable{
+    margin-top: 16px;
+    font-size: 24px;
+    padding: 16px;
+    margin-left: 198px;
+   
+}
+table th{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.363);
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+   
+}
+table{
+    width: 63.1%;
+
+}
+
+tbody td, tfoot td{
+    text-align: left;
+    
+
+}
+table td{
+    font-size: 18px;
+    
+}
+#tableStyle{ 
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        
+    
+}
+#tableStyle thead tr{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    
+}
+#tableStyle th,
+#tableStyle td {
+    padding: 12px 15px;
+}
+#tableStyle tfoot tr{
+    border-bottom: 1px solid #dddddd; 
+    text-align: left;
+}
+#tableStyle tfoot tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+#tableStyle tfoot tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
+#tableStyle tfoot tr.activeRow{
+    font-weight: bold;
+    color: #009879;   
+}
+#tableStyle tr.even {
+    background-color: #f3f3f3;
+}
+
+#tableStyle tr.odd {
+    background-color: #ffffff;
+}

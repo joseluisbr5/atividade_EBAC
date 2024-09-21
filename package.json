@@ -12,6 +12,7 @@
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-imagemin": "^9.1.0",
+<<<<<<< HEAD
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
@@ -19,5 +20,9 @@
   },
   "dependencies": {
     "sass": "^1.79.3"
+=======
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2"
+>>>>>>> 3a4eabff219976872ada916377a9c7126c9c61a0
   }
 }
