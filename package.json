@@ -1,28 +1,18 @@
 {
   "name": "exercicio_gulp",
   "version": "1.0.0",
-  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "gulp": "^5.0.0",
-    "gulp-imagemin": "^9.1.0",
-<<<<<<< HEAD
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^9.0.0",
+    "imagemin-svgo": "^10.0.1"
   },
-  "dependencies": {
-    "sass": "^1.79.3"
-=======
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2"
->>>>>>> 3a4eabff219976872ada916377a9c7126c9c61a0
-  }
+  "type": "module"
 }

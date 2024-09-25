@@ -1,67 +1,58 @@
-<<<<<<< HEAD
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename'); // Adiciona o plugin rename para renomear arquivos
-const sourcemaps = require('gulp-sourcemaps'); // Adiciona o plugin sourcemaps para gerar sourcemaps
+// Importações do Gulp e pacotes necessários
+import gulp from 'gulp';
+import pkg from 'gulp-sass'; // Importa gulp-sass como pacote padrão
+import * as sass from 'sass'; // Importa o Dart Sass (Sass moderno)
 
-// Tarefa para compilar SASS
+const gulpSass = pkg(sass); // Passa o Sass para o gulp-sass
+
+import imagemin from 'gulp-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg'; // Importa o plugin imagemin-mozjpeg
+import imageminOptipng from 'imagemin-optipng'; // Importa o plugin imagemin-optipng
+import imageminSvgo from 'imagemin-svgo';       // Importa o plugin imagemin-svgo
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
+import webp from 'gulp-webp';
+
+// Task para processar e minificar o Sass
 gulp.task('sass', function() {
-  return gulp.src('src/sass/**/*.scss')
-    .pipe(sourcemaps.init()) // Inicia o sourcemap
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write()) // Escreve o sourcemap
-    .pipe(gulp.dest('dist/css'));
+    return gulp.src('src/sass/*.scss')
+        .pipe(gulpSass({ outputStyle: 'compressed' }).on('error', gulpSass.logError)) 
+        .pipe(gulp.dest('dist/css'));
 });
 
-// Tarefa para comprimir imagens
-gulp.task('imagemin', async function() {
-  const imagemin = (await import('gulp-imagemin')).default; // Importação dinâmica do gulp-imagemin
-
-  return gulp.src('src/images/**/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/images'));
+// Task para converter imagens para WebP
+gulp.task('webp', function() {
+    return gulp.src('src/images/*.{png,jpg,jpeg,gif}')
+        .pipe(webp({ quality: 85 })) 
+        .pipe(gulp.dest('dist/images'));
 });
 
-// Tarefa para comprimir e renomear JavaScript
+// Task para minificar imagens originais
+gulp.task('imagemin-original', function() {
+    return gulp.src('src/images/*.{png,jpg,jpeg,gif,svg}')
+        .pipe(imagemin([
+            imageminMozjpeg({ quality: 75, progressive: true }), 
+            imageminOptipng({ optimizationLevel: 5 }),           // Compressão PNG
+            imageminSvgo({                                       // Compressão SVG
+                plugins: [
+                    { removeViewBox: false },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
+        .pipe(gulp.dest('dist/images'))
+        .on('data', function(file) {
+            console.log('Imagem processada:', file.relative);
+        });
+});
+
+// Task para minificar e renomear JavaScript
 gulp.task('compress-js', function() {
-  return gulp.src('src/js/**/*.js')
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' })) // Adiciona o sufixo .min aos arquivos comprimidos
-    .pipe(gulp.dest('dist/js'));
+    return gulp.src('src/js/*.js')
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' })) 
+        .pipe(gulp.dest('dist/js'));
 });
 
-// Tarefa padrão que executa todas as tarefas em paralelo
-gulp.task('default', gulp.parallel('sass', 'imagemin', 'compress-js'));
-=======
-
-// Importa os módulos necessários
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
-
-// Compilação do SASS
-gulp.task('sass', function () {
-  return gulp.src('src/scss/**/*.scss') // Ajuste o caminho para seu diretório de SASS
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest('dist/css')); // Diretório de destino para o CSS compilado
-});
-
-// Compressão de imagens
-gulp.task('imagemin', function () {
-  return gulp.src('src/images/*') // Ajuste o caminho para as suas imagens
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/images'));
-});
-
-// Compressão de JavaScript
-gulp.task('uglify', function () {
-  return gulp.src('src/js/**/*.js') // Ajuste o caminho para seus arquivos JS
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
-});
-
-// Tarefa padrão
-gulp.task('default', gulp.parallel('sass', 'imagemin', 'uglify'));
->>>>>>> 3a4eabff219976872ada916377a9c7126c9c61a0
+// Task padrão que executa todas as tasks em paralelo
+gulp.task('default', gulp.parallel('sass', 'webp', 'imagemin-original', 'compress-js'));
