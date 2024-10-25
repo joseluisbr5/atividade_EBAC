@@ -1,58 +1,68 @@
-const form = document.getElementById('formAtiv');
-const imgAprovado = '<img src="assets/aprovado.png"/>';
-const imgReprovado = '<img src="assets/reprovado.png"/>';
-const atividades = [];
-const notas = [];
-const spanAprovado = `<span class = "resultado aprovado">Aprovado</span>`;
-const spanReprovado = `<span class = "resultado reprovado">Reprovado</span>`;
- let linhas = '';
-form.addEventListener('submit', function(e){
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('[data-tab-button]');
+  const questions = document.querySelectorAll('[data-faq-question]');
 
-    adcionaLinha();
-    atualizaTab();
-    atualizaMediaFinal();
-})
-function adcionaLinha(){
-    const inputNomeAtividade = document.getElementById('nomeAtiv');
-    const inputNotaAtividade = document.getElementById('notaAtiv');
-    
-    if (atividades.includes(inputNomeAtividade.value)){
-        alert(`A atividade: ${inputNomeAtividade.value} já foi inserida.`);
-    }else{
-        atividades.push(inputNomeAtividade.value);
-    notas.push(parseFloat(inputNotaAtividade.value));
-    
-    let linha = '<tr>';
-    linha += `<td>${inputNomeAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`;
-    linha += '</tr>';
+  const heroSection = document.querySelector('.hero');
+  const alturaHeight = heroSection.clientHeight;
 
-    linhas += linha;
+  window.addEventListener('scroll', function() {
+  const posicaoAtual = window.scrollY;
+
+  if (posicaoAtual < alturaHeight) {
+      ocultaElementos();
+  }else{
+      mostraElementos();
+  }
+  });
+
+
+  
+//seçao de atraçoes, programaçao das abas
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function(botao) {
+        const abaAlvo = botao.target.dataset.tabButton;
+        const aba = document.querySelector(`[data-tab-id="${abaAlvo}"]`);
+        escondeTodasAsAbas();
+        aba.classList.add('shows__list--is-active');
+        removeBotaoAtivo();
+        botao.target.classList.add('shows__tabs__button--is-active');
+
+    });
+  }
+//seçao de perguntas frequentes, programaçao do acordeon
+  for (let i = 0; i < questions.length; i++) {
+    questions[i].addEventListener('click', abreOuFechaResposta); 
+  }
+});
+
+function ocultaElementos(){
+  const header = document.querySelector('header');
+  header.classList.add('header--is-hidden');
+}
+function mostraElementos(){
+  const header = document.querySelector('header');
+  header.classList.remove('header--is-hidden');
+}
+
+//
+function abreOuFechaResposta(elemento) {
+    const classe = 'faq__questions__item--is-open';
+    const elementoPai = elemento.target.parentNode;
+    
+    elementoPai.classList.toggle(classe);
+}
+function removeBotaoAtivo(){
+    const buttons = document.querySelectorAll('[data-tab-button]');
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('shows__tabs__button--is-active');
     }
-    
-
-    inputNomeAtividade.value = '';
-    inputNotaAtividade.value = '';
-}
-function atualizaTab(){
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linhas;
 }
 
-function atualizaMediaFinal(){
-   const mediaFinal = calculaMediaFinal();
+function escondeTodasAsAbas() {
+    const tabsContainer = document.querySelectorAll('[data-tab-id]');
 
-   document.getElementById('mediaDasNotas').innerHTML = mediaFinal;
-   document.getElementById('resultFinal').innerHTML = mediaFinal >= 7 ? spanAprovado : spanReprovado;
-}
-function calculaMediaFinal(){
-     let somaNotas = 0;
-     for (let i = 0; i < notas.length; i++){
-        somaNotas += notas[i];
+    for (let i = 0; i < tabsContainer.length; i++) {
+        tabsContainer[i].classList.remove('shows__list--is-active');
     }
-return somaNotas / notas.length;
-
 }
-document.getElementById('nomeContatos').remove()
