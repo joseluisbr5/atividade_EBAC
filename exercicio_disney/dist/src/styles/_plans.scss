@@ -1,0 +1,39 @@
+@use 'variaveis';
+.plans {
+    padding: 40px 20px;
+    background-color: variaveis.$background-color;
+
+    .plans__list__item{
+      img{
+        width: 20px;
+        height: auto;
+      }
+    }
+    h1{
+        font-size: 1.7em;
+        color: variaveis.$text-color;
+        margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.5em;
+      color: variaveis.$text-color;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+  
+    .plans-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    &__list {
+      list-style: none;
+      color: variaveis.$text-secondary-color;
+  
+      &__item {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
