@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+align-items: center;
+background-size: cover; // Ajusta a imagem ao container, cobrindo toda a área
   text-align: center;
   background-image: url(/atividade_EBAC/exercicio_disney/src/images/525487\(1\).png);
   background-size: auto; // Ajusta a imagem ao container sem cortar partes
