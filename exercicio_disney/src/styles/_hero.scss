@@ -7,14 +7,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-align-items: center;
-background-size: cover; // Ajusta a imagem ao container, cobrindo toda a área
+  align-items: center;
+   // Ajusta a imagem ao container, cobrindo toda a área
   text-align: center;
-  background-image: url(../images/525487.png);
-  background-size: auto; // Ajusta a imagem ao container sem cortar partes
-  background-repeat: no-repeat; // Evita repetição da imagem
+  background-image: url(/atividade_EBAC/exercicio_disney/src/images/525487.png);
   background-position: center;
-   
+  background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    min-height: 100vh; /* Garante que o hero cubra a altura total da tela */
+
+     
+  
     &__content{
      
       padding-top: 400px;
@@ -36,7 +40,7 @@ background-size: cover; // Ajusta a imagem ao container, cobrindo toda a área
     .textOne {
         color: variaveis.$text-color;
     }
-  P {
+  p {
         color: variaveis.$text-color;
     }
   
