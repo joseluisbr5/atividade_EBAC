@@ -1,0 +1,137 @@
+.hero {
+  text-align: center;
+  background-image: url("../fundo.a62a0635.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  position: relative;
+}
+
+.hero .container {
+  z-index: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.hero:before {
+  content: "";
+  background-color: #00000063;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero__text {
+  color: #fff;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 56px;
+}
+
+.hero__logo {
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.hero .infos-bar {
+  margin-top: 20px;
+}
+
+.hero .infos-bar__infos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero .infos-bar__infos__item {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+@media (width <= 640px) {
+  .hero {
+    padding: 40px;
+  }
+
+  .hero__logo {
+    height: 40px;
+  }
+
+  .hero__text {
+    margin: 24px 0;
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.button {
+  color: #fff;
+  background-color: #ff6f61;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button__primary {
+  color: #fff;
+}
+
+@media (width <= 640px) {
+  .button {
+    align-items: center;
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media (width <= 1024px) {
+  .button {
+    align-items: center;
+    display: flex;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (width <= 640px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media (width <= 1024px) {
+  .container {
+    max-width: 90%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
