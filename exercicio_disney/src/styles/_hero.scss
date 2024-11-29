@@ -1,0 +1,62 @@
+@use 'variaveis';
+
+.hero {
+  position: relative;
+  padding: 5.6vw;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   // Ajusta a imagem ao container, cobrindo toda a área
+  text-align: center;
+  background-image: url(../../src/images/525487.png);
+  background-position: center;
+  background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    min-height: 100vh; /* Garante que o hero cubra a altura total da tela */
+
+     
+  
+    &__content{
+     
+      padding-top: 400px;
+    }
+
+    &__content__branding img {
+        max-width: 100%;
+        height: auto;
+       
+    }
+
+    .informativos {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .textOne {
+        color: variaveis.$text-color;
+    }
+  p {
+        color: variaveis.$text-color;
+    }
+  
+
+    .botaOne {
+        background-color: variaveis.$primary-color;
+        color: variaveis.$text-color;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .simbolos img {
+        width: 28px; // Ajuste o valor conforme necessário
+        height: auto; // Mantém a proporção da imagem
+    }
+}
